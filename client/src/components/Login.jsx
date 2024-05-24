@@ -14,7 +14,9 @@ const Login = () => {
     axios
       .post("http://localhost:5000/login", { email, password })
       .then((response) => {
-        response.status === 200 && navigate("/dashboard");
+        if (response.data.message === "Success") {
+          navigate("/home");
+        }
       })
       .catch((error) => {
         console.error(error);
@@ -22,7 +24,7 @@ const Login = () => {
   };
   return (
     <section className="vh-100">
-      <div className="container-fluid ">
+      <div className="container-fluid vh-100">
         <div className="row d-flex justify-content-center align-items-center h-100">
           <div className="col-md-9 col-lg-6 col-xl-5">
             <img

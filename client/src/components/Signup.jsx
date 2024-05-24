@@ -25,7 +25,7 @@ const Signup = () => {
     axios
       .post("http://localhost:5000/register", { name, email, password })
       .then((response) => {
-        response.status === 200 && navigate("/login");
+        response.status === 201 && navigate("/login");
       })
       .catch((error) => {
         console.error(error);
