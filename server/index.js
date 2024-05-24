@@ -2,7 +2,7 @@ const express = require("express");
 const mongoose = require("mongoose");
 const cors = require("cors"); // cross sharing in the frontend
 const EmployeeModel = require("./model/employee");
-const UserModel = require("./model/user");
+const UserModel = require("./model/User");
 
 const app = express();
 app.use(express.json());
